@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  resources :posts
 
-  get 'home/about'
+  get 'topics' => 'home#index'
 
   get 'home/faq'
 
