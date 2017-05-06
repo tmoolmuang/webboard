@@ -1,2 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.col-md-2, .col-md-6 {
+  padding: 5px;
+}
+.left, .mid, .right {
+  height: 750px;
+  padding: 20px;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0.15) 0%, rgba(125, 185, 232, 0.05) 100%);
+  border: 1px solid rgba(30, 87, 153, 0.1);
+}
+.top {
+  height: 50px;
+  left: 20px;
+}
+.top h4 {
+  display: inline;
+}
+
+

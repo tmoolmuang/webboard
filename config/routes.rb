@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :categories do
+     resources :posts, except: [:index]
+  end
 
-  get 'topics' => 'home#index'
+  get 'categories' => 'home#index'
 
   get 'home/faq'
 

@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-6 top">
+      <h4>Categories&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+      <%= link_to "New Category", new_category_path, class: 'btn btn-success' %>
+  </div>
+  <div class="col-md-2 top">
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-2">
+    <div class="left">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="mid">
+      <% @categories.each do |category| %>
+        <div class="media">
+          <div class="media-body">
+            <h4 class="media-heading">
+              <%= link_to category.name, category %>
+              <small> <%= category.description %></small>
+            </h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="right">
+    </div>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
