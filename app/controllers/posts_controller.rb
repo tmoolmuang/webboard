@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  include ApplicationHelper
+  
   def show
     @post = Post.find(params[:id])
   end
@@ -16,10 +18,10 @@ class PostsController < ApplicationController
     @post.category = @category
 
     if @post.save
-      flash[:notice] = "Post was saved."
+      flash[:notice] = "Post was created successfully."
       redirect_to [@category, @post]
     else
-      flash.now[:alert] = "There was an error saving the post. Please try again."
+      flash.now[:alert] = error_messages(@post)
       render :new
     end
   end
@@ -34,10 +36,10 @@ class PostsController < ApplicationController
     @post.body = params[:post][:body]
     
     if @post.save
-      flash[:notice] = "Post was updated."
+      flash[:notice] = "Post was updated successfully."
       redirect_to [@post.category, @post]
     else
-      flash.now[:alert] = "There was an error saving the post. Please try again."
+      flash.now[:alert] = error_messages(@post)
       render :edit
     end
   end

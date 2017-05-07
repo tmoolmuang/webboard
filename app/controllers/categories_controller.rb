@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  include ApplicationHelper
+  
   def index
     @categories = Category.all
   end
@@ -21,7 +23,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to @category, notice: "Category was saved successfully."
     else
-      flash.now[:alert] = "Error creating topic. Please try again."
+      flash.now[:alert] = error_messages(@category)
       render :new
     end
   end
@@ -38,10 +40,10 @@ class CategoriesController < ApplicationController
     @category.public = params[:category][:public]
     
     if @category.save
-      flash[:notice] = "Category was updated."
+      flash[:notice] = "Category was updated successfully."
       redirect_to @category
     else
-      flash.now[:alert] = "Error saving topic. Please try again."
+      flash.now[:alert] = error_messages(@category)
       render :edit
     end
   end
