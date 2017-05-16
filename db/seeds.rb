@@ -1,7 +1,20 @@
-5.times do
+User.create!(
+  name: 'Admin User',
+  password: '123qwe',
+  email: 'admin@test.com',
+  role: 'admin')
+  
+User.create!(
+  name: 'Seller User',
+  password: '123qwe',
+  email: 'seller@test.com',
+  role: 'seller')  
+
+7.times do
   Category.create!(
-     name: Faker::LordOfTheRings.location,
-     description: Faker::Lorem.sentence(3, true, 4)
+    # name: Faker::LordOfTheRings.location,
+    name: Faker::Superhero.name,
+    description: Faker::Lorem.sentence(3, true, 4)
   )
 end
 categories = Category.all
@@ -23,6 +36,7 @@ posts = Post.all
 end
  
 puts "Seed finished"
+puts "#{User.count} users created"
 puts "#{Category.count} categories created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
