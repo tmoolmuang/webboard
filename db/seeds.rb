@@ -2,17 +2,29 @@ User.create!(
   name: 'Admin User',
   password: '123qwe',
   email: 'admin@test.com',
-  role: 'admin')
+  role: 'admin',
+  confirmed_at: DateTime.now
+)
   
 User.create!(
   name: 'Seller User',
   password: '123qwe',
   email: 'seller@test.com',
-  role: 'seller')  
+  role: 'seller',
+  confirmed_at: DateTime.now
+) 
+  
+User.create!(
+  name: 'Standard User',
+  password: '123qwe',
+  email: 'standard@test.com',
+  role: 'standard',
+  confirmed_at: DateTime.now
+)  
+  
 
-7.times do
+5.times do
   Category.create!(
-    # name: Faker::LordOfTheRings.location,
     name: Faker::Superhero.name,
     description: Faker::Lorem.sentence(3, true, 4)
   )
