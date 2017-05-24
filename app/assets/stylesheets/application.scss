@@ -1,8 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.user-info {
+  margin-top: 10px;
+}
 .col-md-2, .col-md-6 {
-  padding: 5px;
+  padding: 2px;
 }
 .left, .mid, .right {
   height: 600px;
