@@ -11,11 +11,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new
-    @post.title = params[:post][:title]
-    @post.body = params[:post][:body]
     @category = Category.find(params[:category_id])
-    @post.category = @category
+    @post = @category.posts.build(post_params)
+    @post.user = current_user
 
     if @post.save
       flash[:notice] = "Post was created successfully."
@@ -32,8 +30,7 @@ class PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
-    @post.title = params[:post][:title]
-    @post.body = params[:post][:body]
+    @post.assign_attributes(post_params)
     
     if @post.save
       flash[:notice] = "Post was updated successfully."
@@ -56,4 +53,8 @@ class PostsController < ApplicationController
     end
   end
   
+  private
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
 end

@@ -15,11 +15,8 @@ class CategoriesController < ApplicationController
   end  
   
   def create
-    @category = Category.new
-    @category.name = params[:category][:name]
-    @category.description = params[:category][:description]
-    @category.public = params[:category][:public]
- 
+    @category = Category.new(cat_params)
+
     if @category.save
       redirect_to @category, notice: "Category was saved successfully."
     else
@@ -34,10 +31,7 @@ class CategoriesController < ApplicationController
   
   def update
     @category = Category.find(params[:id])
-    
-    @category.name = params[:category][:name]
-    @category.description = params[:category][:description]
-    @category.public = params[:category][:public]
+    @category.assign_attributes(cat_params)
     
     if @category.save
       flash[:notice] = "Category was updated successfully."
@@ -60,4 +54,8 @@ class CategoriesController < ApplicationController
     end
   end
   
+  private
+  def cat_params
+    params.require(:category).permit(:name, :description, :public)
+  end
 end

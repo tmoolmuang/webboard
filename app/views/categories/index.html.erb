@@ -4,8 +4,10 @@
   <div class="col-md-2">
   </div>
   <div class="col-md-6 top">
-      <h4>Categories&nbsp;&nbsp;&nbsp;&nbsp;</h4>
-      <%= link_to "New Category", new_category_path, class: 'btn btn-success' %>
+    <h4>Categories&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+    <% if current_user.admin? %>
+      <%= link_to "New Category", new_category_path, class: 'btn btn-primary' %>
+    <% end %>
   </div>
   <div class="col-md-2 top">
   </div>

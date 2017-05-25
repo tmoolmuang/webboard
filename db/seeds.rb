@@ -21,7 +21,7 @@ User.create!(
   role: 'standard',
   confirmed_at: DateTime.now
 )  
-  
+users = User.all  
 
 5.times do
   Category.create!(
@@ -35,7 +35,8 @@ categories = Category.all
   Post.create!(
     title: Faker::Lorem.sentence(3, true, 4),
     body: Faker::Lorem.paragraph(2, true, 2),
-    category:  categories.sample
+    category: categories.sample,
+    user: users.sample
   )
 end
 posts = Post.all
