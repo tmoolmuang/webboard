@@ -8,5 +8,4 @@
        expect(test_user).to have_attributes(name: test_user.name, email: test_user.email, password: test_user.password)
      end
    end
-   
  end

@@ -19,15 +19,20 @@ group :development, :test do
   gem 'rspec-rails'         # manually added
   gem 'factory_girl_rails'  # manually added
   gem 'capybara'            # manually added
+  gem 'spring'
+  gem 'shoulda'             # manually added
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'spring'
   gem "letter_opener"   # manually added
 end
 
 group :production do    # manually added
   gem 'pg'
   gem 'rails_12factor'  
+end
+
+group :test do
+  gem 'database_cleaner'
 end
