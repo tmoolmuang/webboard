@@ -12,5 +12,4 @@ RSpec.describe Post, type: :model do
       expect(test_post).to have_attributes(title: test_post.title, body: test_post.body)
     end
   end
-  
 end
