@@ -30,6 +30,13 @@
               <%= link_to category.name, category %>
               <small> <%= category.description %></small>
             </h4>
+            <% category.posts.each do |p| %>
+              <div>
+                <small>
+                  <%= p.title %> - <%= (p.body.html_safe).truncate_words(5) %> - posted <%= time_ago_in_words(p.created_at) %> ago by <%= p.user.email %>
+                </small>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>
