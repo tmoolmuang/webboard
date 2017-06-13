@@ -4,12 +4,8 @@
   <div class="col-md-2">
   </div>
   <div class="col-md-6 top">
-    <h4>Categories&nbsp;&nbsp;&nbsp;&nbsp;</h4>
-    <% if is_admin? %>
-      <%= link_to "New Category", new_category_path, class: 'btn btn-primary' %>
-    <% end %>
   </div>
-  <div class="col-md-2 top">
+  <div class="col-md-2">
   </div>
   <div class="col-md-1">
   </div>
@@ -18,34 +14,35 @@
   <div class="col-md-1">
   </div>
   <div class="col-md-2">
-    <div class="left cat">
+    <div class="left tall">
     </div>
   </div>
   <div class="col-md-6">
-    <div class="mid cat">
+    <div class="mid tall">
       <% @categories.each do |category| %>
-        <div class="media">
-          <div class="media-body">
-            <div class="media-heading category-header">
-              <%= link_to category.name, category %>
-              <%= category.description %>
-              <div class="pull-right">
-                <%= pluralize(category.posts.count, "post") %>
-              </div>
+        <div>
+          <div class="cat-header">
+            <%= link_to category.name, category %>
+            <%= category.description %>
+            <div class="pull-right">
+              <%= pluralize(category.posts.count, "post") %>
             </div>
-            <% category.posts.last(5).reverse.each do |p| %>
-              <div class='cat-post'>
-                  <%= (p.body.html_safe).truncate_words(20) %>&nbsp;&nbsp;&nbsp;
-                  <small class="pull-right">- <%= time_ago_in_words(p.created_at) %> ago by <%= p.user.email %></small>
-              </div>
-            <% end %>
           </div>
+          <% category.posts.last(5).reverse.each do |p| %>
+          <div class='cat-post'>
+            <%= (p.body.html_safe).truncate_words(20) %>
+            <small class="pull-right">- <%= time_ago_in_words(p.created_at) %> ago by <span class="email"><%= p.user.email %></span></small>
+          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
   </div>
   <div class="col-md-2">
-    <div class="right cat">
+    <div class="right tall">
+      <% if is_admin? %>
+        <%= link_to "New Category", new_category_path, class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
   <div class="col-md-1">

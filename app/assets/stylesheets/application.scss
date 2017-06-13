@@ -9,17 +9,19 @@
 }
 .left, .mid, .right {
   height: 625px;
-  padding: 7px 20px 5px 20px;
+  padding: 0px 0px 5px 0px;
   // border-radius: 5px;
   background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0.12) 0%, rgba(125, 185, 232, 0.03) 100%);
   border: 1px solid rgba(30, 87, 153, 0.1);
 }
-.cat {
-  height: 1225px;
+.tall {
+  height: 1253px;
+}
+.short {
+  height: 625px;
 }
 .top {
   height: 40px;
-  left: 100px;
 }
 .top h4 {
   display: inline;
@@ -28,18 +30,28 @@
   margin: auto;
   width: 97%;
 }
-.category-header {
-  background-color: rgba(0, 0, 230, 0.05);
-  padding: 5px;
+.cat-header {
+  background-color: rgba(0, 100, 230, 0.05);
+  border: 1px solid lightgray;
+  width: 100%;
+  height: 38px;
+  padding: 6px;
+  font-size: 1.3em;
 }
 .cat-post {
-  border-bottom: 1px solid lightgray;
+  border: 1px solid lightgray;
   width: 100%;
-  height: 50px;
-  padding: 5px;
+  height: 55px;
+  padding: 8px;
+}
+.detail {
+  height: 75px;
 }
 .bottom-align-div {
   position: absolute;
   bottom: 5px;
   left: 30px;
+}
+.email {
+  color: blue;
 }
