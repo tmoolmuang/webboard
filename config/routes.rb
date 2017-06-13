@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   end
   
   resources :categories do
-     resources :posts, except: [:index]
+    resources :posts, except: [:index] 
+  end
+  
+  resources :posts, only: [] do
+    resources :comments, only: [:create, :destroy]
   end
 
   get 'home/faq'

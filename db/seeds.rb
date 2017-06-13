@@ -40,10 +40,11 @@ categories = Category.all
 end
 posts = Post.all
  
-100.times do
+300.times do
   Comment.create!(
     body: Faker::Lorem.paragraph(3, true, 4),
-    post: posts.sample
+    post: posts.sample,
+    user: users.sample
   )
 end
  
