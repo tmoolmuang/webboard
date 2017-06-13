@@ -8,10 +8,10 @@
   padding: 2px;
 }
 .left, .mid, .right {
-  height: 600px;
-  padding: 20px;
+  height: 625px;
+  padding: 7px 20px 5px 20px;
   // border-radius: 5px;
-  background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0.15) 0%, rgba(125, 185, 232, 0.05) 100%);
+  background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0.12) 0%, rgba(125, 185, 232, 0.03) 100%);
   border: 1px solid rgba(30, 87, 153, 0.1);
 }
 .top {
@@ -25,4 +25,16 @@
   margin: auto;
   width: 97%;
 }
-
+.category-header {
+  background-color: rgba(0, 0, 230, 0.05);
+  padding: 5px;
+}
+.cat-post {
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+}
+.bottom-align-div {
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+}

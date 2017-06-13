@@ -26,14 +26,17 @@
       <% @categories.each do |category| %>
         <div class="media">
           <div class="media-body">
-            <h4 class="media-heading">
+            <div class="media-heading category-header">
               <%= link_to category.name, category %>
               <small> <%= category.description %></small>
-            </h4>
-            <% category.posts.each do |p| %>
-              <div>
+              <div class="pull-right">
+                <small><%= pluralize(category.posts.count, "post") %></small>
+              </div>
+            </div>
+            <% category.posts.last(5).reverse.each do |p| %>
+              <div class='cat-post'>
                 <small>
-                  <%= p.title %> - <%= (p.body.html_safe).truncate_words(5) %> - posted <%= time_ago_in_words(p.created_at) %> ago by <%= p.user.email %>
+                  <%= (p.body.html_safe).truncate_words(10) %>&nbsp;&nbsp;&nbsp;- <%= time_ago_in_words(p.created_at) %> ago by <%= p.user.email %>
                 </small>
               </div>
             <% end %>

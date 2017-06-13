@@ -28,19 +28,21 @@
       <% @posts_page.each do |post| %>
         <div class="media">
           <div class="media-body">
-            <h4 class="media-heading">
-              <%= link_to post.title, category_post_path(@category, post) %>
-            </h4>
-            <small>
-              submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.email %><br />
-              <%= post.comments.count %> Comments
-            </small>
+            <div class="media-heading">
+              <%= link_to (post.body.html_safe).truncate_words(25), category_post_path(@category, post) %><br />
+              <small>posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.email %>
+                <div class="pull-right">
+                  <%= pluralize(post.comments.count, "comment") %>
+                </div>
+              </small>
+            </div>
           </div>
         </div>
       <% end %>
       <br />
-      <%= paginate @posts_page %>
-      <%= page_entries_info @posts_page %>
+      <div class="bottom-align-div">
+        <%= paginate @posts_page %><%= page_entries_info @posts_page %>
+      </div>
     </div>
   </div>
   <div class="col-md-2">

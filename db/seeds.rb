@@ -23,7 +23,7 @@ User.create!(
 )  
 users = User.all  
 
-5.times do
+4.times do
   Category.create!(
     name: Faker::Superhero.name,
     description: Faker::Lorem.sentence(3, true, 4)
@@ -33,8 +33,7 @@ categories = Category.all
 
 50.times do
   Post.create!(
-    title: Faker::Lorem.sentence(3, true, 4),
-    body: Faker::Lorem.paragraph(2, true, 2),
+    body: Faker::Lorem.paragraph(3, true, 3),
     category: categories.sample,
     user: users.sample
   )
