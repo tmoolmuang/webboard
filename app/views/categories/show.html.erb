@@ -4,6 +4,15 @@
   <div class="col-md-2">
   </div>
   <div class="col-md-6 top">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ad1 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-8705032718882317"
+         data-ad-slot="1866378588"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
   <div class="col-md-2">
   </div>
@@ -40,15 +49,16 @@
     </div>
   </div>
   <div class="col-md-2">
-    <div class="right short">
-      <% if is_admin? %>
+    <div class="right short middiv">
+      <%-# if is_admin? -%>
         <%= link_to "Edit Category", edit_category_path, class: 'btn btn-primary' %>
         <%= link_to "Delete Category", @category, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this category?' } %>
-      <% end %>
-      <br /><br />
-      <% if user_signed_in? %>
+        <br />      
+      <%#- end -%>
+      <%-# if user_signed_in? -%>
+        <br />
         <%= link_to "New Post", new_category_post_path(@category), class: 'btn btn-primary' %>
-      <% end %>
+      <%-# end -%>
     </div>
   </div>
   <div class="col-md-1">
