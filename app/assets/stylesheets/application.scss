@@ -4,31 +4,52 @@
 .user-info {
   margin-top: 10px;
 }
+.shrink {
+  margin: auto;
+  width: 97%;
+}
+.row {
+  width: 1440px;
+  margin: auto;
+}
+.menu {
+  width: 920px;
+}
+.one {
+  width: 100px;
+}
+.two {
+  width: 250px;
+}
+.three {
+  width: 350px;
+}
+.six {
+  width: 732px;
+}
 .col-md-2, .col-md-6 {
   padding: 2px;
 }
 .left, .mid, .right {
-  height: 625px;
+  // height: 625px;
   padding: 0px 0px 5px 0px;
-  // border-radius: 5px;
-  background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0.12) 0%, rgba(125, 185, 232, 0.03) 100%);
+  // background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0.12) 0%, rgba(125, 185, 232, 0.03) 100%);
+  background-color: rgba(125, 180, 230, 0.08);
   border: 1px solid rgba(30, 87, 153, 0.1);
 }
 .tall {
   height: 1253px;
 }
 .short {
-  height: 625px;
+  height: 570px;
 }
 .top {
-  height: 40px;
+  height: 90px;
+  text-align: center;
+  width: 100%;
 }
 .top h4 {
   display: inline;
-}
-.shrink {
-  margin: auto;
-  width: 97%;
 }
 .cat-header {
   background-color: rgba(0, 100, 230, 0.05);
@@ -54,4 +75,14 @@
 }
 .email {
   color: blue;
+}
+.middiv {
+  text-align: center;
+}
+.comment-padding {
+  padding-left: 30px;
+}
+.post-header {
+  padding: 6px;
+  font-size: 1.1em;
 }
