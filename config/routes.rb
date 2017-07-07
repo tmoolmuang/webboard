@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   
   resources :posts, only: [] do
     resources :comments, only: [:create, :destroy]
+    post '/like' => 'likes#like', as: :like
+    post '/unlike' => 'likes#unlike', as: :unlike
   end
 
   get 'home/faq'

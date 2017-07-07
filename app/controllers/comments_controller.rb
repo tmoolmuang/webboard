@@ -5,14 +5,16 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     comment = @post.comments.new(comment_params)
+    @post.updated_at = DateTime.now
     comment.user = current_user
     
     if comment.save
-     flash[:notice] = "Comment saved successfully."
-     redirect_to [@post.category, @post]
+      @post.save
+      flash[:notice] = "Comment saved successfully."
+      redirect_to [@post.category, @post]
     else
-     flash[:alert] = "Comment failed to save."
-     redirect_to [@post.category, @post]
+      flash[:alert] = "Comment failed to save."
+      redirect_to [@post.category, @post]
     end
   end
   

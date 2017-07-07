@@ -4,8 +4,7 @@
   <div class="col-md-2 two">
   </div>
   <div class="col-md-6 six">
-    <!--<img src="main/a-png.png" alt="test" height="90" width="728">-->
-    <%= image_tag("main/main_banner1.jpg", :alt => "travel", size: "728x90") %>
+    <%= image_tag("main/rushmore.png", :alt => "travel", size: "728x90") %>
   </div>
   <div class="col-md-2 two">
   </div>
@@ -29,16 +28,19 @@
       <% @categories.each do |category| %>
         <div>
           <div class="cat-header">
-            <%= link_to category.name, category %>
+            <%= link_to category.name, category %>&nbsp;&nbsp;
             <%= category.description %>
             <div class="pull-right">
               <%= pluralize(category.posts.count, "post") %>
             </div>
           </div>
-          <% category.posts.order("updated_at DESC").first(5).each do |p| %>
+          <% category.posts.first(5).each do |p| %>
           <div class='cat-post'>
-            <%= (p.body.html_safe).truncate_words(20) %>
-            <small class="pull-right"><%= time_ago_in_words(p.created_at) %> ago by <span class="email"><%= p.user.email %></span></small>
+            <%= (p.body.html_safe).truncate(160) %>
+            <small>
+              <div class="like-info"><%= p.like %>&nbsp;&nbsp;<span class="glyphicon glyphicon-thumbs-up"></span></div>
+              <div class="post-info"><%= time_ago_in_words(p.created_at) %> ago by <span class="email"><%= p.user.email.truncate(25) %></span></div>
+            </small>
           </div>
           <% end %>
         </div>

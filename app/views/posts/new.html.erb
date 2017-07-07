@@ -1,14 +1,39 @@
-<h3>New Post</h3>
 <div class="row">
-  <div class="col-md-4">
-    <p>Guidelines for posts</p>
-    <ul>
-      <li>Make sure it rhymes.</li>
-      <li>Don't use the letter "A".</li>
-      <li>The incessant use of hashtags will get you banned.</li>
-    </ul>
+  <div class="col-md-1">
   </div>
-  <div class="col-md-8">
-    <%= render partial: 'form', locals: { category: @category, post: @post, call_back: category_path(@category) } %>
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-6 top">
+  </div>
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-2">
+    <div class="left short">
+      <p><h4>Guidelines for new posts</h4></p>
+      <ul>
+        <li>Make sure it rhymes.</li>
+        <li>Don't use the letter "A".</li>
+        <li>The incessant use of hashtags will get you banned.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="mid short">
+      <div>
+        <%= render partial: 'form', locals: { category: @category, post: @post, call_back: category_path(@category) } %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="left short">
+    </div>
+  </div>
+  <div class="col-md-1">
   </div>
 </div>

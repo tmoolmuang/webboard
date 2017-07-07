@@ -20,11 +20,12 @@
   <div class="col-md-6">
     <div class="mid">
       <div class="post-header">
+        <%= render partial: 'likes/like', locals: { post: @post } %>
         <%= @post.body %>
       </div>
       <div class="comment-padding">
         <u>Comments</u>
-        <% @post.comments.order("updated_at").each do |c| %>
+        <% @post.comments.each do |c| %>
           <%= render partial: 'comments/comment', locals: {comment: c} %>
         <% end %>
         <%-# if current_user -%>

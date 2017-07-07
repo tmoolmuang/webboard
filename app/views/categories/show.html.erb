@@ -4,15 +4,6 @@
   <div class="col-md-2">
   </div>
   <div class="col-md-6 top">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- ad1 -->
-    <ins class="adsbygoogle"
-         style="display:inline-block;width:728px;height:90px"
-         data-ad-client="ca-pub-8705032718882317"
-         data-ad-slot="1866378588"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
   </div>
   <div class="col-md-2">
   </div>
@@ -34,11 +25,11 @@
         </div>
         <% @posts_page.each do |post| %>
           <div class="cat-post detail">
-            <%= link_to (post.body.html_safe).truncate_words(25), category_post_path(@category, post) %><br />
-            <small>posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.email %>
-              <div class="pull-right">
-                <%= pluralize(post.comments.count, "comment") %>
-              </div>
+            <%= render partial: 'likes/like', locals: { post: post } %>
+            <%= link_to (post.body.html_safe).truncate(180), category_post_path(@category, post) %><br />
+            <small>
+              <div class="time-post">posted <%= time_ago_in_words(post.created_at) %> ago by <span class="email"><%= post.user.email %></span></div>
+              <div class="comment-count"><%= pluralize(post.comments.count, "comment") %></div>
             </small>
           </div>
         <% end %>
