@@ -13,21 +13,38 @@
 <div class="row">
   <div class="col-md-1">
   </div>
-  <div class="col-md-2">
-    <div class="left short">
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="mid short">
-      <div>
-        <p>
-          <h4>Welcome to webboard:</h4> Please feel free to look around. But in order to participate in the post please register with us.
-        </p>
+  <div class="col-md-10">
+    <div class="mid short pic">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= image_tag("about/s-rush.png", :alt => "rushmore") %>
+          </div>
+          <div class="item">
+            <%= image_tag("about/s-grand.png", :alt => "grand canyon") %>
+          </div>
+          <div class="item">
+            <%= image_tag("about/s-golden.png", :alt => "golden gate") %>
+          </div>
+          <div class="item">
+            <%= image_tag("about/s-arch.png", :alt => "arch") %>
+          </div>
+          <div class="item">
+            <%= image_tag("about/s-ny.png", :alt => "new york") %>
+          </div>
+          <div class="item">
+            <%= image_tag("about/s-rockie.png", :alt => "rockies") %>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="right short">
     </div>
   </div>
   <div class="col-md-1">

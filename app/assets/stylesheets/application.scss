@@ -1,19 +1,46 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: rgba(120, 175, 225, 0.05);
+}
 .user-info {
-  margin-top: 10px;
+  padding-top: 6px;
 }
 .shrink {
   margin: auto;
   width: 97%;
+}
+.navbar-brand {
+  font-size: 1.7em;
+  height: 25px;
+  padding-top: 5px; 
+  padding-bottom: 5px;
+}
+.navbar-nav > li > a {
+  padding-top: 6px; 
+  padding-bottom: 4px;
+}
+.navbar {
+  min-height: 32px;
+}
+.pic img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  opacity: 0.8;
 }
 .row {
   width: 1440px;
   margin: auto;
 }
 .menu {
+  margin: auto;
   width: 920px;
+}
+.menu-height {
+  height: 35px;
 }
 .one {
   width: 100px;
@@ -32,7 +59,7 @@
 }
 .left, .mid, .right {
   // height: 625px;
-  padding: 0px 0px 5px 0px;
+  padding: 0px;
   // background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0.12) 0%, rgba(125, 185, 232, 0.03) 100%);
   background-color: rgba(125, 180, 230, 0.08);
   border: 1px solid rgba(30, 87, 153, 0.1);
@@ -41,7 +68,7 @@
   height: 1253px;
 }
 .short {
-  height: 570px;
+  height: 606px;
 }
 .top {
   height: 90px;
@@ -66,7 +93,7 @@
   border-bottom : 1px solid lightgray;
   width: 100%;
   height: 55px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   position: relative;
 }
 .detail {
@@ -74,7 +101,7 @@
 }
 .bottom-align-div {
   position: absolute;
-  bottom: 5px;
+  bottom: 3px;
   left: 30px;
 }
 .email {
@@ -136,4 +163,7 @@
   position: absolute;
   bottom: 4px;
   right: 7px;
+}
+.b {
+  border: 1px solid black;
 }

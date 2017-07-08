@@ -9,7 +9,7 @@ RSpec.describe "Category", :type => feature do
   feature 'View categories' do        
     scenario 'allows viewing the list of all categories' do
       visit categories_path
-      expect(page).to have_content 'Categories'
+      expect(page).to have_no_content 'New Category'
     end
   end
   

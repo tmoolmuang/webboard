@@ -1,4 +1,4 @@
-<%#- if current_user -%>
+<% if current_user %>
   <div class="like pull-left">
     <% if is_voted?(post) %>
       <div class="voted"><small><%= post.like %></small></div>
@@ -8,4 +8,4 @@
       <div class="not-voted"><%= link_to "", post_like_path(post), class: 'glyphicon glyphicon-thumbs-up', method: :post %></div>
     <% end %>
   </div>
-<%#- end -%>
+<% end %>

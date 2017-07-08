@@ -6,41 +6,46 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   </head>
   <body>
     <div class="shrink">
-      <div class="container menu">
-        <ul class="nav nav-tabs">    
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Category", categories_path %></li>
-          <li><%= link_to "Faq", home_faq_path %></li>
-          <li><%= link_to "Contact", home_contact_path %></li>
-          <div class="pull-right user-info">
-          <% if user_signed_in? %>
-            <% if current_user.standard? %>
-              <span>standard user</span>  
-            <% elsif current_user.seller? %>
-              <span>seller</span>  
-            <% elsif current_user.admin? %>
-              <span>admin</span>  
-            <% end %>
-            <span>signed in as: </span> 
-            <strong><%= current_user.email.truncate(30) %></strong> |
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - 
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-          <% else %>
-            <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
-            <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
-          <% end %>
+      <div class="menu menu-height">
+        <nav class="navbar navbar-standard menu-height">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">wanderin</a>
+            </div>
+            <ul class="nav navbar-nav">    
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Category", categories_path %></li>
+              <li><%= link_to "Faq", home_faq_path %></li>
+              <li><%= link_to "Contact", home_contact_path %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right user-info">
+              <% if user_signed_in? %>
+                <% if current_user.standard? %>
+                  <li>standard user</li>  
+                <% elsif current_user.seller? %>
+                  <li>seller</li>  
+                <% elsif current_user.admin? %>
+                  <li>admin</li>  
+                <% end %>
+                <li>&nbsp;signed in as:&nbsp;</li> 
+                <strong><%= current_user.email.truncate(30) %></strong> |
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - 
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <% else %>
+                <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
+                <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
+              <% end %>
+            </ul>
           </div>
-        </ul>
+        </nav>
       </div> 
-      
-      <div class="row">
-        <div class="col-md-3 three">
-        </div>
-        <div class="col-md-6 six"><small>
-          <div id="show-flash">
+      <div class="container">
+        <div id="show-flash">
+          <small>
           <% if flash[:notice] %>
             <div class="alert alert-success">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -51,20 +56,17 @@
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <%= flash[:alert] %>
             </div>
-          <% end %></small>
-          </div>
-          <script type="text/javascript">
-              $(document).ready(function(){
-              setTimeout(function(){
-              $('#show-flash').remove();
-            }, 4000);
-           })
-          </script>
+          <% end %>
+          </small>
         </div>
-        <div class="col-md-3 three">
-        </div>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            setTimeout(function(){
+            $('#show-flash').remove();
+          }, 4000);
+         })
+        </script>
       </div>
-      
       <div>
         <%= yield %>
       </div>
