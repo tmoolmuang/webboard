@@ -1,23 +1,40 @@
 <div class="row">
-  <div class="col-md-1">
+  <div class="col-md-1 one">
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 two">
   </div>
-  <div class="col-md-6 top">
+  <div class="col-md-6 six top">
+    <% case @post.category.id %>
+      <% when 1 %>
+        <%= image_tag("main/rushmore.png", :alt => "travel", size: "728x90") %>
+      <% when 2 %>
+        <%= image_tag("main/brazil.png", :alt => "travel", size: "728x90") %>
+      <% when 3 %>
+        <%= image_tag("main/beach.png", :alt => "travel", size: "728x90") %>
+      <% when 4 %>
+        <%= image_tag("main/hike.png", :alt => "travel", size: "728x90") %>
+      <% else %>
+      no pic
+    <% end %>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 two">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 one">
   </div>
 </div>
 <div class="row">
-  <div class="col-md-1">
+  <div class="col-md-1 one">
   </div>
-  <div class="col-md-2">
-    <div class="left short">
+  <div class="col-md-2 two">
+    <div class="left short middiv">
+      <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=webboard05-20&marketplace=amazon&region=US&placement=B072MP2PVV&asins=B072MP2PVV&linkId=d750afa5190ea05e847fbfdcd171c642&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+      </iframe>
+      <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=webboard05-20&marketplace=amazon&region=US&placement=B01LYZNM7V&asins=B01LYZNM7V&linkId=ed1f111c6292f16e762b0a0719ddf2fa&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+      </iframe>
+      <a target="_blank"  href="https://www.amazon.com/gp/offer-listing/B01L6RE7Z4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01L6RE7Z4&linkCode=am2&tag=webboard05-20&linkId=b24118964eb10c866d46eb9e32f05dc5"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=B01L6RE7Z4&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=webboard05-20" ></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=webboard05-20&l=am2&o=1&a=B01L6RE7Z4" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
     </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6 six">
     <div class="mid">
       <div class="post-header">
         <%= render partial: 'likes/like', locals: { post: @post } %>
@@ -34,18 +51,21 @@
       </div>
     </div>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 two">
     <div class="right short middiv">
       <% if user_signed_in? %>
         <br />
         <%= link_to "Edit Post", edit_category_post_path(@post.category, @post), class: 'btn btn-primary' %>
         <%= link_to "Delete Post", [@post.category, @post], method: :delete, class: 'btn btn-danger', data: { confirm: 'All related comments will also be deleted. Are you sure you want to delete this post?' } %>
       <% end %>
-      <br /><br />
+      <br />
       <%= link_to "Back to Category", category_path(@post.category), class: 'btn btn-default' %>
+      <div class="middiv">
+        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=14&l=ur1&category=sports&banner=0022YXJ8ZK2V14C43PG2&f=ifr&linkID=f00f09b07a708d9e468b726ce8648f46&t=webboard05-20&tracking_id=webboard05-20" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      </div>    
     </div>
-  </div>
-  <div class="col-md-1">
+   </div>
+  <div class="col-md-1 one">
   </div>
 </div>
 

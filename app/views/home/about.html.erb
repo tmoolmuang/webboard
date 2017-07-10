@@ -1,21 +1,22 @@
 <div class="row">
-  <div class="col-md-1">
+  <div class="col-md-1 one">
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 two">
   </div>
-  <div class="col-md-6 top">
+  <div class="col-md-6 six top">
+    <h2 class="blue">where is your next destination?</h2>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 two">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 one">
   </div>
 </div>
 <div class="row">
   <div class="col-md-1">
   </div>
   <div class="col-md-10">
-    <div class="mid short pic">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="short pic">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -23,10 +24,12 @@
           <li data-target="#myCarousel" data-slide-to="3"></li>
           <li data-target="#myCarousel" data-slide-to="4"></li>
           <li data-target="#myCarousel" data-slide-to="5"></li>
+          <li data-target="#myCarousel" data-slide-to="6"></li>
+          <li data-target="#myCarousel" data-slide-to="7"></li>
         </ol>
         <div class="carousel-inner">
           <div class="item active">
-            <%= image_tag("about/s-rush.png", :alt => "rushmore") %>
+            <%= image_tag("about/s-rockie.png", :alt => "rockies") %>
           </div>
           <div class="item">
             <%= image_tag("about/s-grand.png", :alt => "grand canyon") %>
@@ -41,7 +44,13 @@
             <%= image_tag("about/s-ny.png", :alt => "new york") %>
           </div>
           <div class="item">
-            <%= image_tag("about/s-rockie.png", :alt => "rockies") %>
+            <%= image_tag("about/s-eiffel.png", :alt => "eiffel") %>
+          </div>
+          <div class="item">
+            <%= image_tag("about/s-fuji.png", :alt => "fuji") %>
+          </div>
+          <div class="item">
+            <%= image_tag("about/s-wat.png", :alt => "wat") %>
           </div>
         </div>
       </div>

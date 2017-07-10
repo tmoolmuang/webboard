@@ -2,12 +2,21 @@
 @import "bootstrap";
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Libre Franklin', sans-serif; 
   background-color: rgba(120, 175, 225, 0.05);
 }
 .user-info {
   padding-top: 6px;
 }
+.user-info a {
+  text-decoration: none;
+  &:hover {
+    background: transparent;
+  }
+}
+.blue {
+  color: #428bca;
+ }
 .shrink {
   margin: auto;
   width: 97%;
@@ -28,7 +37,6 @@ body {
 .pic img {
   display: block;
   margin: auto;
-  width: 100%;
   opacity: 0.8;
 }
 .row {
@@ -58,9 +66,7 @@ body {
   padding: 2px;
 }
 .left, .mid, .right {
-  // height: 625px;
   padding: 0px;
-  // background-image: linear-gradient(to bottom, rgba(30, 87, 153, 0.12) 0%, rgba(125, 185, 232, 0.03) 100%);
   background-color: rgba(125, 180, 230, 0.08);
   border: 1px solid rgba(30, 87, 153, 0.1);
 }
@@ -68,22 +74,17 @@ body {
   height: 1253px;
 }
 .short {
-  height: 606px;
+  height: 690px;
 }
 .top {
-  height: 90px;
+  height: 92px;
   text-align: center;
-  width: 100%;
-}
-.top h4 {
-  display: inline;
 }
 .cat-header {
   background-color: rgba(0, 100, 230, 0.05);
   border: 1px solid lightgray;
   border-left: none;
   border-right: none;
-
   width: 100%;
   height: 38px;
   padding: 6px 10px;
