@@ -11,6 +11,8 @@ The app is deployed on Heroku: https://webboard-tm.herokuapp.com/
 
 The source code is here on GitHub: https://github.com/tmoolmuang/webboard
 
+![p3](https://user-images.githubusercontent.com/24881495/28252314-4e087ece-6a45-11e7-9f36-8f9c43ddbe21.JPG)
+
 # Setup and Configuration
 
 **Languages and Frameworks**: Ruby on Rails and Bootstrap
@@ -33,4 +35,4 @@ The source code is here on GitHub: https://github.com/tmoolmuang/webboard
 
 + rspec, capybara, database_cleaner for testing
 
-
+![p1](https://user-images.githubusercontent.com/24881495/28252319-6d04d854-6a45-11e7-8a0d-2f018e1ad9df.JPG)
