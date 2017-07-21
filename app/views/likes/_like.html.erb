@@ -8,4 +8,9 @@
       <div class="not-voted"><%= link_to "", post_like_path(post), class: 'glyphicon glyphicon-thumbs-up', method: :post %></div>
     <% end %>
   </div>
+<% else %>
+  <div class="like pull-left" onclick="alert('Please login')">
+    <div class="not-voted"><small><%= post.like %></small></div>
+    <div class="not-voted"><i class="glyphicon glyphicon-thumbs-up"></i></div>
+  </div>
 <% end %>
