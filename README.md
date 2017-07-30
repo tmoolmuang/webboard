@@ -1,8 +1,8 @@
 # Webboard   [![Build Status](https://travis-ci.org/tmoolmuang/webboard.svg?branch=master)](https://travis-ci.org/tmoolmuang/webboard)
 
-Webboard is a simple Ruby on Rails application that allows user to post and share information on the bulletin board. 
-It demonstrats the use of parent-child relationship tables. Users can create posts and comment on a post. 
-Users can vote and like the posts. User can edit and delete his or her own post. The app is similar to Bloccit but 
+Webboard is a simple Ruby on Rails application that allows a user to post and share information on the bulletin board. 
+It demonstrates the use of parent-child relationship tables. Users can create posts and comment on a post. 
+Users can vote and like the posts. The user can edit and delete his or her own post. The app is similar to Bloccit but 
 with a new layout. Standard size Amazon affiliated ads can be be placed on the both side of the content. Current version
 suppports 120 x 240 px, and 160 x 600 px banner.
 
